@@ -68,6 +68,7 @@ def home():
 
 
 def mal_result():
+   global model 	
    if request.method=="POST":
         image = request.files['malaria']
         means=torch.tensor([0.5253, 0.4226, 0.4563])
