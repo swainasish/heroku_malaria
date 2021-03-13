@@ -17,14 +17,6 @@ import torch.nn as nn
 app = Flask(__name__)
 app.secret_key = 'kfjfjk'
 
-@app.route('/',methods=['GET',"POST"])
-
-def home():
-   return render_template('home.html')
-
-
-
-@app.route('/mal_result',methods=['GET',"POST"])
 
 class malaria_CNN(nn.Module):
    def __init__(self):
@@ -62,6 +54,17 @@ class malaria_CNN(nn.Module):
       X = X.view(samples,-1)
       X = self.Linear_Seq(X)
       return X
+
+
+@app.route('/',methods=['GET',"POST"])
+
+def home():
+   return render_template('home.html')
+
+
+
+@app.route('/mal_result',methods=['GET',"POST"])
+
 
 
 def mal_result():
