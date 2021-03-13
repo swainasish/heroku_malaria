@@ -1,6 +1,8 @@
 Flask==1.1.2
 numpy==1.19.5
 gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2==2.10.1
 -f https://download.pytorch.org/whl/torch_stable.html
 torch==1.7.1+cpu 
 torchvision==0.8.2+cpu 
