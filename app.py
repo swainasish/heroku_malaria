@@ -18,7 +18,7 @@ import numpy as np
 app = Flask(__name__)
 app.secret_key = 'kfjfjk'
 
-@app.route('/home')
+@app.route('/')
 
 def home():
    return render_template('home.html')
