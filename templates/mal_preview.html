@@ -1,0 +1,112 @@
+{%extends 'mother.html'%}
+
+{%block element%}
+
+<style>
+body {
+        font-family: 'Courier Prime';font-size: 22px;
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3  class="font-weight-bold">About the DataSet and Model used</h3>
+
+            <h4>Dataset I used for this model training</h4>
+            <h5>No of Images used for training   : 24958 </h6>
+            <h5>No of Images used for validation : 2600 </h6>
+
+             <a size="2" href="https://www.kaggle.com/mrizwanse/malaria-cell-images-dataset" target="_blank" >Dataset Link </a>
+
+             <h4>Code of CNN model by PyTorch</h4>
+             <a size="2" href="https://github.com/swainasish/web/blob/main/malaria_cnn.py" target="_blank" >Github code link </a> 
+             
+             <h4>Epochs : 6 , Accuracy : 92.18 %</h4>
+            
+          </div>
+        <div class="col">
+  
+        <h2>Upload the Blood cell image [Malaria Detector]</h2>
+        <hr>
+  
+        <form action="/mal_result" method="POST" enctype="multipart/form-data">
+  
+          <div class="form-group">
+            <label>Select image</label>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" name="malaria" id="malaria">
+              <label class="custom-file-label" for="malaria">Select image...</label>
+            </div>
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Upload</button>
+  
+        </form>
+  
+      </div>
+    </div>
+  </div>
+  <br> </br>
+  <div class="container">
+    <div class="row">
+
+  <h3>Try Model's behaviour from certain training data Images</h3>
+  <h6>Images are choosen for someone's easy interpretation, but in reality dataset is much complicated and diversified</h6>
+   </div>
+  </div>
+  <br> </br>
+  <div class="container">
+    <div class="row">
+        <div class="col">
+          <h6>Image 1</h6>
+          <img src="static/healthy1.png" alt="Girl in a jacket" width="225" height="225">
+          <a size="1" href="/preview1" target="_blank">Upload and analysis </a>
+
+        </div>
+        <div class='col'>
+          <h6>Image 2</h6>
+          <img src="static/dis1.png" alt="Girl in a jacket" width="225" height="225">
+          <a size="1" href="preview2" target="_blank" >Upload and analysis </a>
+        </div>  
+        <div class='col'>
+          <h6>Image 3</h6>
+          <img src="static/healthy2.png" alt="Girl in a jacket" width="225" height="225">
+          <a size="1" href="/preview1" target="_blank">Upload and analysis </a>
+        </div> 
+        <div class='col'>
+          <h6>Image 4</h6>
+          <img src="static/dis2.png" alt="Girl in a jacket" width="225" height="225">
+          <a size="1" href="preview2" target="_blank" >Upload and analysis </a>
+        </div>   
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<div class="container">
+  <div class="row">
+      <div class="col">
+<h9>Email - swainasish@yahoo.com</h9>
+</div>
+</div>
+</div>
+
+
+
+{%endblock%}
+
+

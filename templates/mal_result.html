@@ -1,0 +1,88 @@
+{%extends 'mother.html'%}
+
+{%block element%}
+
+<style>
+body {
+        font-family: 'Courier Prime';font-size: 22px;
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3  class="font-weight-bold">About the DataSet and Model used</h3>
+
+            <h4>Dataset I used for this model training</h4>
+            <h5>No of Images used for training   : 24958 </h6>
+            <h5>No of Images used for validation : 2600 </h6>
+
+             <a size="2" href="https://www.kaggle.com/mrizwanse/malaria-cell-images-dataset" target="_blank">Dataset Link </a>
+
+             <h4>Code of CNN model by PyTorch</h4>
+             <a size="2" href="https://github.com/swainasish/web/blob/main/malaria_cnn.py" target="_blank">Github code link </a> 
+             
+             <h4>Epochs : 6 , Accuracy : 92.18 %</h4>
+            
+          </div>
+        <div class="col">
+  
+        <h2>Upload the Blood cell image [Malaria Detector]</h2>
+        <hr>
+  
+        <form action="/mal_result" method="POST" enctype="multipart/form-data">
+  
+          <div class="form-group">
+            <label>Select image</label>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" name="malaria" id="malaria">
+              <label class="custom-file-label" for="malaria">Select image...</label>
+            </div>
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Upload</button>
+  
+        </form>
+  
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <p  class="font-weight-bold"></p>
+            
+        </div>
+
+        <div class="col">
+            <p  class="font-weight-bold">{{final_result}}</p>
+            
+        </div>
+    </div>
+   </div>
+</body>
+
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<div class="container">
+  <div class="row">
+      <div class="col">
+<h9>Email - swainasish@yahoo.com</h9>
+</div>
+</div>
+</div>
+
+
+
+{%endblock%}
+
+
