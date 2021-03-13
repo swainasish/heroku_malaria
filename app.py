@@ -18,7 +18,7 @@ import numpy as np
 app = Flask(__name__)
 app.secret_key = 'kfjfjk'
 
-@app.route('/')
+@app.route('/',methods=['GET',"POST"])
 
 def home():
    return render_template('home.html')
