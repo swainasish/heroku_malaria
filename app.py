@@ -7,7 +7,6 @@ Malaria_image_detect_Flask_web_app
 @author: swain_asish
 """
 from flask import Flask,render_template,request,redirect
-import matplotlib.pyplot as plt
 from PIL import Image
 import torch
 from torchvision import transforms
