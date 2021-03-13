@@ -39,23 +39,23 @@ def mal_result():
                       transforms.ToTensor(),
                       transforms.Normalize(means,stds) 
         ])
-        try:
-          image_tensor = Image.open(image)
-          img_tensor = image_transformation(image_tensor)
-          img_size =img_tensor.shape
-          img_tensor = img_tensor.view(1,img_size[0],img_size[1],img_size[2])
-          model = torch.load('malaria_binary_6epoch.pt',torch.device('cpu'))
-          ypred = model.forward(img_tensor)
-          ypred = torch.max(ypred,1)[1]
-          result =np.array(ypred)
-          if result == 1:
-             result = 'Congratulations , No malaria'
-          else:
-             result = 'Need Doctor\'s attention, High chance of malaria positive '    
-          return render_template('mal_result.html',final_result=result)
-        except:
-          str2 = 'please upload the relevant image'
-          return render_template('mal_result.html',final_result=str2)
+        
+        image_tensor = Image.open(image)
+        img_tensor = image_transformation(image_tensor)
+        img_size =img_tensor.shape
+        img_tensor = img_tensor.view(1,img_size[0],img_size[1],img_size[2])
+        model = torch.load('malaria_binary_6epoch.pt',torch.device('cpu'))
+        ypred = model.forward(img_tensor)
+        ypred = torch.max(ypred,1)[1]
+        result =np.array(ypred)
+        if result == 1:
+            result = 'Congratulations , No malaria'
+        else:
+            result = 'Need Doctor\'s attention, High chance of malaria positive '    
+        return render_template('mal_result.html',final_result=result)
+        #except:
+         # str2 = 'please upload the relevant image'
+         # return render_template('mal_result.html',final_result=str2)
 
          
    return render_template('mal_preview.html')
