@@ -54,7 +54,7 @@ class malaria_CNN(nn.Module):
       X = X.view(samples,-1)
       X = self.Linear_Seq(X)
       return X
-
+model = malaria_CNN()
 
 @app.route('/',methods=['GET',"POST"])
 
